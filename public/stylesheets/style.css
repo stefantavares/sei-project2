@@ -1,8 +1,46 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  box-sizing: border-box;
+  font-family: Helvetica;
+  color: #424748;
 }
 
-a {
-  color: #00B7FF;
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+body>nav {
+  grid-area: nav;
+  background-color: black;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px 0 30px;
+}
+
+nav>img {
+  width: 34px;
+  object-fit: contain;
+  margin-right: auto;
+  color: #424748;
+}
+
+nav>a {
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+}
+
+nav>a:hover:not(.active) {
+  color: black;
+  border-color: black;
+  background-color: rgb(251, 255, 1);
+}
+
+nav>a.active {
+  color: white;
+  cursor: default;
 }
