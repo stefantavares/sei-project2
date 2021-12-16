@@ -20,7 +20,7 @@ body>nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 20px 0 30px;
+  padding: 0 10px 0 30px;
 }
 
 nav>img {
@@ -31,9 +31,11 @@ nav>img {
 }
 
 nav>a {
-  margin: 20px;
+  margin: 10px;
   text-decoration: none;
-  padding: 10px;
+  font-weight: 600;
+  font-size: 6px;
+  padding: 5px;
   border: 1px solid white;
   border-radius: 5px;
   color: white;
@@ -54,11 +56,11 @@ nav>a.active {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 34px;
+  height: 28px;
 }
 
 .login img {
-  height: 30px;
+  height: 16px;
 }
 
 main {
@@ -67,4 +69,12 @@ main {
   align-items: center;
   flex-direction: column;
   color: white;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 10px;
 }
