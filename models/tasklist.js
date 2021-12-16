@@ -12,6 +12,7 @@ const taskListSchema = new Schema({
             return new Date().getFullYear();
         },
     },
+    tasks: [String],
 });
 
 
