@@ -11,6 +11,9 @@ router.get('/new', taskListsCtrl.new);
 // POST "/" - Create Route
 router.post('/', taskListsCtrl.create);
 
+// GET "/:id" - Show Route
+router.get('/:id', taskListsCtrl.show);
+
 
 
 module.exports = router;

@@ -13,6 +13,7 @@ const isLoggedIn = require("./config/auth");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var taskListsRouter = require('./routes/tasklists');
+var tasksRouter = require('./routes/tasks');
 
 // This will load our env variables
 require('dotenv').config();
@@ -51,6 +52,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/tasklists', taskListsRouter);
+app.use('/', tasksRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -1,0 +1,60 @@
+<%- include('../partials/header') %>
+
+<section id="tasks-details">
+    <table>
+        <thead>
+            <tr></tr>
+            <tr></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>TASK TITLE: <%= tasklist.title %></td>
+            </tr>
+            <tr>
+                <td>DATE: <%= tasklist.listDate %></td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br>
+</section>
+<form action="/tasklists/<%= tasklist._id %>/tasks" method="POST">
+    <label for="">ADD TASK:</label>
+    <textarea name="content" ></textarea>
+    <label for="">IMPORTANT?:</label>
+    <input type="checkbox" name="important">
+    <input type="submit" value="ADD TASK">
+  </form>
+  <br><br>
+    <div>TASKS: </div>
+    <br>
+  
+  <% if (tasklist.tasks.length) { %>
+    <table>
+      <thead>
+        <tr>
+        </tr>
+      </thead>
+      <tbody>
+        <% tasklist.tasks.forEach(function(t) { %>
+            <tr id="one-list-container">
+            <td><%= t.content %></td>
+            <td>Important: <%= t.important ? 'Yes' : 'No' %></td>
+            <td><a href="">NOTES:</a></td>
+            <td>  
+                <div class="button" id="button-3">
+                  <div id="circle"></div>
+                  <a class="delete-button" href="">X</a>
+              </div>
+              </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h5>No Tasks Yet</h5>
+  <% } %>
+
+
+
+
+<%- include('../partials/footer') %>
