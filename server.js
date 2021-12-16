@@ -6,6 +6,7 @@ var logger = require('morgan');
 var session = require('express-session');
 var passport = require('passport');
 var methodOverride = require('method-override');
+
 const isLoggedIn = require("./config/auth");
 
 
@@ -48,7 +49,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/', isLoggedIn, reviewsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

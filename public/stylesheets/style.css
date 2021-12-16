@@ -1,12 +1,17 @@
 * {
   box-sizing: border-box;
   font-family: Helvetica;
-  color: #424748;
 }
 
 body {
   margin: 0;
   height: 100vh;
+  background-color: black;
+}
+
+nav {
+  border-bottom: 2px solid rgb(251, 255, 1);
+  margin-bottom: 20px;
 }
 
 body>nav {
@@ -43,4 +48,23 @@ nav>a:hover:not(.active) {
 nav>a.active {
   color: white;
   cursor: default;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+}
+
+.login img {
+  height: 30px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
 }

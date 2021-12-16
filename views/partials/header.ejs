@@ -11,6 +11,12 @@
 <body>
   <nav>
     <img src="">
-    <a href="">ADD TASK LIST</a>
-    <a href="">ALL TASK LISTS</a>
+    <% if (user) { %>
+        <a href=""	<%- title === 'Add Task List' ? 'class="active"' : '' %>>ADD TASK LIST</a>
+        <a href="" <%- title === 'All Task Lists' ? 'class="active"' : '' %>>ALL TASK LISTS</a>
+        <a href="/logout">LOG OUT</a>
+      <% } else { %>
+        <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+      <% } %>
   </nav>
+  <main>
