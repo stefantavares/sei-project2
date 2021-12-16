@@ -2,7 +2,8 @@ const TaskList = require('../models/tasklist');
 
 module.exports = {
     index,
-    new: newTaskList
+    new: newTaskList,
+    create
 };
 
 function index(req, res) {
@@ -14,3 +15,12 @@ function index(req, res) {
 function newTaskList(rew, res) {
     res.render('tasklists/new');
 };
+
+function create(req, res) {
+    const tasklist = new TaskList(req.body);
+    tasklist.save(function (err) {
+        if (err) return res.render('tasklists/new');
+        console.log(tasklist);
+        res.redirect('/tasklists');
+    })
+}

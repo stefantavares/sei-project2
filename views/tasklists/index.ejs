@@ -1,31 +1,26 @@
 <%- include('../partials/header') %>
 <h1>MY TASK LISTS</h1>
-<div id="all-list-container">
     <table id="list">
         <thead>
           <tr>
-            <th>Title</th>
-            <th>Date</th>
           </tr>
         </thead>
         <tbody>
-                <tr id="one-list-container">
-                    <td>Task List 1</td>
-                    <td>12/15/20322</td>
-                    <td><a href="">DETAILS</a></td>
-                    <td><button>X</button></td>
-                </tr>
           <% taskLists.forEach(function(t) { %>
-            <tr>
+            <tr id="one-list-container">
               <td><%= t.title %></td>
-              <td><%= t.date %></td>
+              <td><%= t.listDate %></td>
               <td><a href="">DETAILS</a></td>
-              <button>X</button>
+              <td>  
+                  <div class="button" id="button-3">
+                    <div id="circle"></div>
+                    <a class="delete-button" href="">X</a>
+                </div>
+                </td>
             </tr>
             <% }); %>
           </tbody>
         </table>
-</div>
 
 
 <%- include('../partials/footer') %>

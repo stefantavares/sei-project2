@@ -6,11 +6,13 @@ const taskListSchema = new Schema({
         type: String,
         required: true,
     },
-    date: {
-        type: Number,
+    listDate: {
+        type: Date,
         default: function () {
-            return new Date().getFullYear();
-        },
+            var d = new Date();
+            var noTimeDate = d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate();
+            return noTimeDate;
+        }
     },
     tasks: [String],
 });

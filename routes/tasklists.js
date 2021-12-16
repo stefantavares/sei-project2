@@ -8,6 +8,9 @@ router.get('/', taskListsCtrl.index);
 // GET "/new" - New Route
 router.get('/new', taskListsCtrl.new);
 
+// POST "/" - Create Route
+router.post('/', taskListsCtrl.create);
+
 
 
 module.exports = router;

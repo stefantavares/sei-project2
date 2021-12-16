@@ -1,12 +1,12 @@
 <%- include('../partials/header') %>
 <h1>ADD A NEW TASK LIST</h1>
 <div id="new-list-container">
-<form action="/movies" method="POST">
+<form action="/tasklists" method="POST">
   <label>TITLE:
     <input type="text" name="title">
   </label><br>
   <label>DATE:
-    <input type="date" name="date">
+    <input type="date" name="listDate">
   </label><br><br>
   <input type="submit" value="ADD TASK LIST">
 </form>
