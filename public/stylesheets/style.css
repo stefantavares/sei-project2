@@ -9,17 +9,17 @@
 body {
   margin: 0;
   height: 100vh;
-  background-color: black;
+  background-color: rgb(51, 51, 51);
 }
 
 nav {
-  border-bottom: 2px solid rgb(251, 255, 1);
+  border-bottom: 3px solid rgb(209, 211, 105);
   margin-bottom: 20px;
 }
 
 body>nav {
   grid-area: nav;
-  background-color: black;
+  background-color: rgb(51, 51, 51);
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -47,7 +47,7 @@ nav>a {
 nav>a:hover:not(.active) {
   color: black;
   border-color: black;
-  background-color: rgb(251, 255, 1);
+  background-color: rgb(209, 211, 105);
 }
 
 nav>a.active {
@@ -85,19 +85,47 @@ h3 {
 
 #all-list-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   height: 315px;
   width: 289px;
-  background-color: black;
+  background-color: rgb(51, 51, 51);
   border: 1px solid rgb(251, 255, 1);
   border-radius: 5px;
 }
 
+.list-title {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.list-date {
+  font-size: 8px;
+}
+
+a.details {
+  font-size: 8px;
+  font-weight: 800;
+  color: rgb(209, 211, 105);
+}
+
 #one-list-container {
-  background-color: black;
-  border: 1px solid rgb(251, 255, 1);
+  background-color: rgb(51, 51, 51);
+  border: 1px solid rgb(197, 199, 103);
   border-radius: 5px;
+  padding: 10px;
+  width: 295px;
+  margin-bottom: 3px;
+}
+
+#one-list-container:hover {
+  background-color: rgb(65, 65, 65);
+  border: 1px solid rgb(230, 231, 125);
+  border-radius: 5px;
+  padding: 10px;
+  width: 295px;
+  margin-bottom: 5px;
 }
 
 #new-list-container {
@@ -107,7 +135,7 @@ h3 {
   padding: 20px;
   height: 200px;
   width: 289px;
-  background-color: black;
+  background-color: rgb(51, 51, 51);
   border: 1px solid rgb(251, 255, 1);
   border-radius: 5px;
 }
@@ -119,7 +147,7 @@ h3 {
   padding: 20px;
   height: 225px;
   width: 300px;
-  background-color: black;
+  background-color: rgb(51, 51, 51);
   border: 1px solid rgb(251, 255, 1);
   border-radius: 5px;
 }

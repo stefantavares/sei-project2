@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 <h1>MY TASK LISTS</h1>
-    <table id="list">
+    <!-- <table id="list">
         <thead>
           <tr>
           </tr>
@@ -20,6 +20,30 @@
             <% }); %>
           </tbody>
         </table>
+        <br><br> -->
+        <div>
+        <% tasklists.forEach(function(t) { %>
+          <div id="one-list-container">
+            <div class="title-container">
+              <div class="list-title"><%= t.title %></div>
+            </div>
+            <div class="date-container">
+              <div class="list-date"><%= t.listDate %></div>
+            </div>
+            <div class="details-container">
+              <div><a class="details" href="/tasklists/<%= t._id %>/">DETAILS:</a></div>
+            </div>
+            <div class="delete-container">
+              <form action="/tasklists/<%= t._id %>?_method=DELETE" id="delete-button" method="POST">
+              <button type="submit">X</button>
+              </form>
+            </div>
+          </div>
+        </div>
+          <% }); %>
+      </table>
+
+
 
 
 <%- include('../partials/footer') %>

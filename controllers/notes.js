@@ -4,6 +4,7 @@ const Note = require('../models/note');
 module.exports = {
     create,
     new: newNote,
+    show
 };
 
 function create(req, res) {
@@ -33,6 +34,15 @@ function newNote(req, res) {
     })
 };
 
+function show(req, res) {
+    console.log(req.params.id);
+    TaskList.findById(req.params.tasklistId, function (err, tasklist) {
+        Note.find({ tasklist: tasklist._id }, function (err, notes) {
+            console.log('Here are the ', notes);
+            res.render('notes/new', { tasklist, notes });
+        })
+    });
+};
 
 
 
