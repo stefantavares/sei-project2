@@ -15,16 +15,21 @@
             </tr>
         </tbody>
     </table>
-    <br><br>
+    <br>
 </section>
+<div id="add-task-container">
 <form action="/tasklists/<%= tasklist._id %>/tasks" method="POST">
     <label for="">ADD TASK:</label>
     <textarea name="content" ></textarea>
+    <br><br>
     <label for="">IMPORTANT?:</label>
     <input type="checkbox" name="important">
+    <br>
+    <br>
     <input type="submit" value="ADD TASK">
   </form>
-  <br><br>
+</div>
+  <br>
     <div>TASKS: </div>
     <br>
   
@@ -38,8 +43,8 @@
         <% tasklist.tasks.forEach(function(t) { %>
             <tr id="one-list-container">
             <td><%= t.content %></td>
-            <td>Important: <%= t.important ? 'Yes' : 'No' %></td>
-            <td><a href="">NOTES:</a></td>
+            <td>IMPORTANT: <%= t.important ? 'YES' : 'NO' %></td>
+            <td><a href="/tasklists/<%= tasklist._id %>/notes/new">NOTES:</a></td>
             <td>  
                 <div class="button" id="button-3">
                   <div id="circle"></div>

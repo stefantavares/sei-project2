@@ -6,16 +6,15 @@
           </tr>
         </thead>
         <tbody>
-          <% taskLists.forEach(function(t) { %>
+          <% tasklists.forEach(function(t) { %>
             <tr id="one-list-container">
               <td><%= t.title %></td>
               <td><%= t.listDate %></td>
               <td><a href="/tasklists/<%= t._id %>/">DETAILS:</a></td>
               <td>  
-                  <div class="button" id="button-3">
-                    <div id="circle"></div>
-                    <a class="delete-button" href="">X</a>
-                </div>
+                <form action="/tasklists/<%= t._id %>?_method=DELETE" id="delete-button" method="POST">
+                <button type="submit">X</button>
+                </form>
                 </td>
             </tr>
             <% }); %>

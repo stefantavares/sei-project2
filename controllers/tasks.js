@@ -6,6 +6,7 @@ module.exports = {
 
 function create(req, res) {
     TaskList.findById(req.params.id, function (err, tasklist) {
+        req.body.notes = [];
         tasklist.tasks.push(req.body);
         tasklist.save(function (err) {
             console.log(req.body);
