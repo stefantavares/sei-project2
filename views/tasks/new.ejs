@@ -1,0 +1,32 @@
+<%- include('../partials/header') %>
+
+<div>TASKS: </div>
+<br>
+
+<% if (tasklist.tasks.length) { %>
+<table>
+  <thead>
+    <tr>
+    </tr>
+  </thead>
+  <tbody>
+    <% tasklist.tasks.forEach(function(t) { %>
+        <tr id="one-list-container">
+        <td><%= t.content %></td>
+        <td>IMPORTANT: <%= t.important ? 'YES' : 'NO' %></td>
+        <td><a href="/tasklists/<%= tasklist._id %>/notes/new">NOTES:</a></td>
+        <td>  
+            <div class="button" id="button-3">
+              <div id="circle"></div>
+              <a class="delete-button" href="">X</a>
+          </div>
+          </td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>
+<% } else { %>
+<h5>No Tasks Yet</h5>
+<% } %>
+
+<%- include('../partials/footer') %>

@@ -7,17 +7,46 @@ module.exports = {
 };
 
 function create(req, res) {
-    req.body.tasklist = req.params.id;
-    Note.create(req.body, function (err) {
-        res.redirect(`/tasklists/${req.params.id}/notes/new`);
-    });
-};
-
-function newNote(req, res) {
-    TaskList.findById(req.params.id, function (err, tasklist) {
-        res.render('notes/new', { tasklist });
+    TaskList.findById(req.params.tasklistId, function (err, tasklist) {
+        let foundTask = tasklist.tasks.find(function (task) {
+            return task.id === req.params.taskId;
+        })
+        const note = new Note(req.body);
+        tasklist.save(function (err) {
+            if (err) return res.render('notes/new');
+        });
+        foundTask.notes.push(note);
+        // foundTask.save(function (err) {
+        //     console.log(err);
+        console.log(note);
+        console.log(foundTask);
+        res.redirect(`/tasklists/${tasklist._id}/${req.params.taskId}/notes/new`);
+        // });
     })
 };
+
+
+function newNote(req, res) {
+    TaskList.findById(req.params.tasklistId, function (err, tasklist) {
+        let taskId = req.params.taskId;
+        res.render('notes/new', { tasklist, taskId });
+    })
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // // const task = tasklist.tasks.filter(function (e) {
         // //     return e._id.equals(req.params.id);

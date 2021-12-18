@@ -44,7 +44,7 @@
             <tr id="one-list-container">
             <td><%= t.content %></td>
             <td>IMPORTANT: <%= t.important ? 'YES' : 'NO' %></td>
-            <td><a href="/tasklists/<%= tasklist._id %>/notes/new">NOTES:</a></td>
+            <td><a href="/tasklists/<%= tasklist._id %>/<%= t._id %>/notes/new">NOTES:</a></td>
             <td>  
                 <div class="button" id="button-3">
                   <div id="circle"></div>

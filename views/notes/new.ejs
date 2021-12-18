@@ -5,7 +5,7 @@
 <h6>"Print current selected task here"</h6>
 <br>
 
-<form id="new-note-form" action="/tasklists/<%= tasklist._id %>/notes" method="POST">
+<form id="new-note-form" action="/tasklists/<%= tasklist._id %>/<%= taskId %>/notes" method="POST">
     <label>ADD NOTE:</label>
     <textarea name="content"></textarea>
     <br>
@@ -13,6 +13,19 @@
 </form>
 <br>
 
-
+<table class=""> 
+    <thead>
+        <tr>
+            <th>Notes: <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% notes.forEach(function(n) { %>
+          <tr>
+            <td><%= n.content %></td>
+          </tr>
+        <% }); %>
+    </tbody>
+</table>
 
 <%- include('../partials/footer') %>
