@@ -94,10 +94,26 @@ h3 {
   border-radius: 5px;
 }
 
+.details-delete {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  ;
+}
+
+.details-container {
+  margin-right: 20px;
+}
+
+.delete-container {
+  margin-left: 20px;
+}
+
 .list-title {
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 3px;
+  margin-bottom: 4px;
 }
 
 .list-date {
@@ -136,23 +152,56 @@ a.details {
   height: 200px;
   width: 289px;
   background-color: rgb(51, 51, 51);
-  border: 1px solid rgb(251, 255, 1);
+  border: 1px solid rgb(230, 231, 125);
   border-radius: 5px;
+}
+
+#task-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #add-task-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   padding: 20px;
-  height: 225px;
-  width: 300px;
+  /* height: 225px; */
+  /* width: 300px; */
   background-color: rgb(51, 51, 51);
-  border: 1px solid rgb(251, 255, 1);
-  border-radius: 5px;
+  /* border: 1px solid rgb(230, 231, 125);
+  border-radius: 5px; */
 }
 
-table {
+#add-task-label {
+  font-size: 12px;
+  margin-bottom: 4px;
+  font-weight: 600;
+  margin-left: 2px;
+}
+
+#important-label {
+  font-size: 8px;
+  font-weight: 800;
+}
+
+#add-task-section {
+  display: flex;
+  flex-direction: column;
+}
+
+#add-task-content {
+  border: 1px solid rgb(230, 231, 125);
+  font-style: italic;
+  font-size: 12px;
+  border-radius: 5px;
+  color: white;
+  background-color: rgb(51, 51, 51);
+  margin-bottom: 6px;
+}
+
+/* table {
   font-size: 8px;
   margin: 0px 23px 0px 23px;
 }
@@ -165,14 +214,38 @@ table td {
   width: 260px;
   padding: 10px;
   text-align: center;
+} */
+
+/* #list td:nth-child(2), #list td:nth-child(3) {
+  min-width: 100px;
+} */
+
+/* Buttons */
+
+/* Check box */
+
+
+/* Submit Buttons */
+.submit-button {
+  margin-left: 10px;
+  width: 65px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 6px;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  background-color: rgb(51, 51, 51);
 }
 
-#list td:nth-child(2), #list td:nth-child(3) {
-  min-width: 100px;
+.submit-button:hover {
+  color: black;
+  border-color: black;
+  background-color: rgb(209, 211, 105);
 }
 
 /* Delete Buttons  */
-
 .button {
   display: inline-flex;
   height: 20px;
@@ -236,4 +309,9 @@ a {
 
 #button-3:hover a {
   color: white;
+}
+
+::placeholder {
+  color: rgb(226, 222, 222);
+  opacity: 7;
 }

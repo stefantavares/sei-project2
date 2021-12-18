@@ -1,49 +1,31 @@
 <%- include('../partials/header') %>
 
 <section id="tasks-details">
-    <table>
-        <thead>
-            <tr></tr>
-            <tr></tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>TASK TITLE: <%= tasklist.title %></td>
-            </tr>
-            <tr>
-                <td>DATE: <%= tasklist.listDate %></td>
-            </tr>
-        </tbody>
-    </table>
-    <br>
+
+  <h1><%= tasklist.title %></h1>
+  <h3><%= tasklist.listDate %></h3>
 </section>
 <div id="add-task-container">
 <form action="/tasklists/<%= tasklist._id %>/tasks" method="POST">
-    <label for="">ADD TASK:</label>
-    <textarea name="content" ></textarea>
-    <br><br>
-    <label for="">IMPORTANT?:</label>
+  <div id="add-task-section">
+    <label id="add-task-label" for="">ADD A TASK:</label>
+    <textarea id="add-task-content" name="content" rows="2" cols="30" placeholder="Add task here..."></textarea>
+  </div>
+  <div id="">
+    <label id="important-label" for="">IMPORTANT?:</label>
     <input type="checkbox" name="important">
-    <br>
-    <br>
-    <input type="submit" value="ADD TASK">
+    <input class="submit-button" type="submit" value="ADD TASK">
+  </div>
   </form>
 </div>
   <br>
     <div>TASKS: </div>
-    <br>
   
   <% if (tasklist.tasks.length) { %>
-    <table>
-      <thead>
-        <tr>
-        </tr>
-      </thead>
-      <tbody>
         <% tasklist.tasks.forEach(function(t) { %>
-            <tr id="one-list-container">
+            <div id="one-list-container">
             <td><%= t.content %></td>
-            <td>IMPORTANT: <%= t.important ? 'YES' : 'NO' %></td>
+            <td><small>IMPORTANT:</small> <%= t.important ? 'YES' : 'NO' %></td>
             <td><a href="/tasklists/<%= tasklist._id %>/<%= t._id %>/notes/new">NOTES:</a></td>
             <td>  
                 <div class="button" id="button-3">
@@ -51,10 +33,8 @@
                   <a class="delete-button" href="">X</a>
               </div>
               </td>
-          </tr>
+          </div>
         <% }); %>
-      </tbody>
-    </table>
   <% } else { %>
     <h5>No Tasks Yet</h5>
   <% } %>
