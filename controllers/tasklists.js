@@ -6,6 +6,7 @@ module.exports = {
     new: newTaskList,
     create,
     show,
+    delete: deleteTaskList
 };
 
 function index(req, res) {
@@ -34,6 +35,11 @@ function show(req, res) {
     });
 };
 
+function deleteTaskList(req, res) {
+    TaskList.findOneAndDelete({ _id: req.params.id }, function (err) {
+        res.redirect('/tasklists');
+    });
+}
 
 
 

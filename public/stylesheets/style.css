@@ -66,6 +66,11 @@ nav>a.active {
   height: 16px;
 }
 
+/* Icons */
+.list-icon1 {
+  height: 12px;
+}
+
 main {
   display: flex;
   justify-content: center;
@@ -118,12 +123,6 @@ h3 {
 
 .list-date {
   font-size: 8px;
-}
-
-a.details {
-  font-size: 8px;
-  font-weight: 800;
-  color: rgb(209, 211, 105);
 }
 
 #one-list-container {
@@ -222,6 +221,21 @@ table td {
 
 /* Buttons */
 
+/* Details Button */
+a.details {
+  font-size: 8px;
+  font-weight: 800;
+  color: white;
+  border: 1px solid green;
+  border-radius: 4px;
+  padding: 7px 10px 6px 10px;
+}
+
+a.details:hover {
+  border: 2px solid green;
+  padding: 8px 11px 7px 11px;
+}
+
 /* Check box */
 
 
@@ -246,7 +260,7 @@ table td {
 }
 
 /* Delete Buttons  */
-.button {
+/* .button {
   display: inline-flex;
   height: 20px;
   width: 20px;
@@ -261,7 +275,7 @@ table td {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-}
+} */
 
 a {
   color: white;
@@ -270,48 +284,89 @@ a {
 }
 
 .delete-button {
+  padding: 2px 6px 2px 6px;
   color: red;
   text-decoration: none;
+  font-size: 10px;
   letter-spacing: 1px;
+  background-color: rgb(51, 51, 51);
+  border: 1px solid red;
+  border-radius: 4px;
 }
 
-#button-3 {
-  position: relative;
-  overflow: hidden;
+.delete-button:hover {
+  padding: 3px 7px 3px 7px;
+  border: 2px solid red;
+  font-weight: 400;
+}
+
+
+/* Draggable */
+.draggable-list {
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: 0;
+  list-style-type: none;
+}
+
+.draggable-list li {
+  background-color: #fff;
+  display: flex;
+  flex: 1;
+}
+
+.draggable-list li:not(:last-of-type) {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.draggable-list .number {
+  background-color: var(--background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  height: 60px;
+  width: 60px;
+}
+
+.draggable-list li.over .draggable {
+  background-color: #eaeaea;
+}
+
+.draggable-list .person-name {
+  margin: 0 20px 0 0;
+}
+
+.draggable-list li.right .person-name {
+  color: #3ae374;
+}
+
+.draggable-list li.wrong .person-name {
+  color: #ff3838;
+}
+
+.draggable {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  flex: 1;
+}
+
+.check-btn {
+  background-color: var(--background-color);
+  border: none;
+  color: var(--text-color);
+  font-size: 16px;
+  padding: 10px 20px;
   cursor: pointer;
 }
 
-#button-3 a {
-  position: relative;
-  transition: all .45s ease-Out;
+.check-btn:active {
+  transform: scale(0.98);
 }
 
-#circle {
-  width: 0%;
-  height: 0%;
-  opacity: 0;
-  line-height: 40px;
-  border-radius: 50%;
-  background: red;
-  position: absolute;
-  transition: all .5s ease-Out;
-  top: 20px;
-  left: 70px;
-}
-
-#button-3:hover #circle {
-  width: 200%;
-  height: 500%;
-  opacity: 1;
-  top: -70px;
-  left: -70px;
-}
-
-#button-3:hover a {
-  color: white;
-}
-
-::placeholder {
-  color: rgb(226, 222, 222);
-  opacity: 7;
+.check-btn:focus {
+  outline: none;
 }

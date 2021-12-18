@@ -14,6 +14,8 @@ router.post('/', taskListsCtrl.create);
 // GET "/:id" - Show Route
 router.get('/:id', taskListsCtrl.show);
 
+router.delete('/:id', taskListsCtrl.delete);
+
 
 
 

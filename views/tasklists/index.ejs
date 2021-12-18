@@ -23,28 +23,31 @@
         <br><br> -->
         <div>
         <% tasklists.forEach(function(t) { %>
+          <div id="div">
           <div id="one-list-container">
             <div class="title-container">
-              <div class="list-title"><%= t.title %></div>
+              <div class="list-title"><img class="list-icon1" src="https://cdn-icons-png.flaticon.com/128/776/776864.png" alt=""> <%= t.title %></div>
             </div>
             <div class="date-container">
               <div class="list-date"><%= t.listDate %></div>
             </div>
             <div class="details-delete">
             <div class="details-container">
-              <div><a class="details" href="/tasklists/<%= t._id %>/">DETAILS:</a></div>
+              <div><a class="details" href="/tasklists/<%= t._id %>/">DETAILS</a></div>
             </div>
             <div class="delete-container">
               <form action="/tasklists/<%= t._id %>?_method=DELETE" id="delete-button" method="POST">
-              <button type="submit">X</button>
+              <button class="delete-button" type="submit">X</button>
               </form>
             </div>
           </div>
           </div>
         </div>
+        </div>
           <% }); %>
-      </table>
+          <br>
 
+  
 
 
 
