@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const noteSchema = new Schema({
+    content: String,
+});
 
 const taskSchema = new Schema({
     content: {
@@ -9,9 +12,10 @@ const taskSchema = new Schema({
     },
     complete: Boolean,
     important: Boolean,
-    notes: [{
-        type: Schema.Types.ObjectId, ref: 'Note',
-    }]
+    notes: [noteSchema]
+    // notes: [{
+    //     type: Schema.Types.ObjectId, ref: 'Note',
+    // }]
 });
 
 const taskListSchema = new Schema({
