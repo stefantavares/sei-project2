@@ -2,15 +2,17 @@
 
 
 <h1>ADD A NEW TASK LIST</h1>
-<div id="new-list-container">
-<form action="/tasklists" method="POST">
-  <label>TITLE:
+<div id="add-task-container"></div>
+<form id="new-note-form" action="/tasklists" method="POST">
+  <label id="add-task-label">TITLE:
     <input type="text" name="title">
   </label><br>
-  <label>DATE:
+  <label id="add-task-label">DATE:
     <input type="date" name="listDate">
   </label><br><br>
-  <input type="submit" value="ADD TASK LIST">
+  <div class="align-right">
+    <input class="submit-button" type="submit" value="ADD TASK LIST">
+  </div>
 </form>
 </div>
 
