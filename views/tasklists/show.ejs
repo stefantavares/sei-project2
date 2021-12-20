@@ -32,7 +32,7 @@
             <div class="details-delete">
             <div><a class="details" href="/tasklists/<%= tasklist._id %>/<%= t._id %>/notes/new">NOTES:</a></div>
               <div class="delete-container">
-                <form action="/tasklists/<%= t._id %>?_method=DELETE" id="delete-button" method="POST">
+                <form action="/tasklists/<%= t._id %>/tasks?_method=DELETE" id="delete-button" method="POST">
                 <button class="delete-button" type="submit">X</button>
                 </form>
               </div>

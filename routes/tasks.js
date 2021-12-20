@@ -6,6 +6,6 @@ const tasksCtrl = require('../controllers/tasks');
 router.post('/tasklists/:id/tasks', tasksCtrl.create);
 
 // DELETE '/reviews/:id' page for removing a review written by user
-router.delete('/tasklists/:tasklistId/taskId', tasksCtrl.delete);
+router.delete('/tasklists/:id/tasks', tasksCtrl.delete);
 
 module.exports = router;

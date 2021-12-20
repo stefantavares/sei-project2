@@ -16,8 +16,14 @@ function create(req, res) {
 };
 
 function deleteTask(req, res) {
+    console.log("RIGHT ROUTE");
     TaskList.findOne({ 'tasks._id': req.params.id }, function (err, tasklist) {
         const task = tasklist.tasks.id(req.params.id);
+        task.remove();
+        tasklist.save(function (err) {
+            if (err) console.log(err);
+            res.redirect(`/tasklists/${tasklist._id}`)
+        })
         console.log(task);
 
     })
