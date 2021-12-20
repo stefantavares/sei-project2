@@ -221,6 +221,11 @@ textarea {
 #important-label {
   font-size: 10px;
   font-weight: 800;
+  margin: 3px, 0px, 3px, 0px;
+}
+
+#important {
+  margin: 3px, 0px, 0px, 0px;
 }
 
 #add-task-section {
@@ -261,7 +266,7 @@ a.details:hover {
 
 /* Submit Buttons */
 .submit-button {
-  margin-left: 10px;
+  margin: 10px, 0px, 0px, 10px;
   width: 65px;
   text-decoration: none;
   font-weight: 600;
