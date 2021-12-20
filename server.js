@@ -14,7 +14,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var taskListsRouter = require('./routes/tasklists');
 var tasksRouter = require('./routes/tasks');
-var notesRouter = require('./routes/notes');
+// var notesRouter = require('./routes/notes');
 
 // This will load our env variables
 require('dotenv').config();
@@ -54,7 +54,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/tasklists', taskListsRouter);
 app.use('/', tasksRouter);
-app.use('/', notesRouter);
+// app.use('/', notesRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -1,4 +1,3 @@
-const Note = require('../models/note');
 const TaskList = require('../models/tasklist');
 
 module.exports = {

@@ -16,10 +16,9 @@
         <td>IMPORTANT: <%= t.important ? 'YES' : 'NO' %></td>
         <td><a href="/tasklists/<%= tasklist._id %>/notes/new">NOTES:</a></td>
         <td>  
-            <div class="button" id="button-3">
-              <div id="circle"></div>
-              <a class="delete-button" href="">X</a>
-          </div>
+          <form action="/tasklists/<%= t._id %>/<%= taskId %>?_method=DELETE" id="delete-button" method="POST">
+            <button class="delete-button" type="submit">X</button>
+            </form>
           </td>
       </tr>
     <% }); %>

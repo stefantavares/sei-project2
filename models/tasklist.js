@@ -13,9 +13,6 @@ const taskSchema = new Schema({
     complete: Boolean,
     important: Boolean,
     notes: [noteSchema]
-    // notes: [{
-    //     type: Schema.Types.ObjectId, ref: 'Note',
-    // }]
 });
 
 const taskListSchema = new Schema({

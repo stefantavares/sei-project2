@@ -2,6 +2,7 @@ const TaskList = require('../models/tasklist');
 
 module.exports = {
     create,
+    delete: deleteTask
 };
 
 function create(req, res) {
@@ -13,3 +14,11 @@ function create(req, res) {
         });
     });
 };
+
+function deleteTask(req, res) {
+    TaskList.findOne({ 'tasks._id': req.params.id }, function (err, tasklist) {
+        const task = tasklist.tasks.id(req.params.id);
+        console.log(task);
+
+    })
+}
