@@ -1,26 +1,5 @@
 <%- include('../partials/header') %>
 <h1>MY TASK LISTS</h1>
-    <!-- <table id="list">
-        <thead>
-          <tr>
-          </tr>
-        </thead>
-        <tbody>
-          <% tasklists.forEach(function(t) { %>
-            <tr id="one-list-container">
-              <td><%= t.title %></td>
-              <td><%= t.listDate %></td>
-              <td><a href="/tasklists/<%= t._id %>/">DETAILS:</a></td>
-              <td>  
-                <form action="/tasklists/<%= t._id %>?_method=DELETE" id="delete-button" method="POST">
-                <button type="submit">X</button>
-                </form>
-                </td>
-            </tr>
-            <% }); %>
-          </tbody>
-        </table>
-        <br><br> -->
         <div>
         <% tasklists.forEach(function(t) { %>
           <div id="div">

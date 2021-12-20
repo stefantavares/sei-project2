@@ -1,18 +1,18 @@
 <%- include('../partials/header') %>
 
-<section id="tasks-details">
-
-  <h1><%= tasklist.title %></h1>
+<h1><img class="list-icon1" src="https://cdn-icons-png.flaticon.com/128/776/776864.png" alt=""> <%= tasklist.title %></h1>
   <h3><%= tasklist.listDate %></h3>
-</section>
+
 <div id="add-task-container">
 <form action="/tasklists/<%= tasklist._id %>/tasks" method="POST">
   <div id="add-task-section">
     <label id="add-task-label" for="">ADD A TASK:</label>
     <textarea id="add-task-content" name="content" rows="2" cols="30" placeholder="Add task here..."></textarea>
   </div>
+  <div>
     <label id="important-label" for="">IMPORTANT?:</label>
     <input type="checkbox" name="important">
+  </div>
     <div class="align-right">
     <input class="submit-button" type="submit" value="ADD TASK">
   </div>
@@ -24,15 +24,20 @@
   <% if (tasklist.tasks.length) { %>
         <% tasklist.tasks.forEach(function(t) { %>
             <div id="one-list-container">
-            <td><%= t.content %></td>
-            <td><small>IMPORTANT:</small> <%= t.important ? 'YES' : 'NO' %></td>
-            <td><a href="/tasklists/<%= tasklist._id %>/<%= t._id %>/notes/new">NOTES:</a></td>
-            <td>  
-                <div class="button" id="button-3">
-                  <div id="circle"></div>
-                  <a class="delete-button" href="">X</a>
+              <div class="title-container">
+                <div class="list-title"><img class="list-icon1" src="https://cdn-icons-png.flaticon.com/128/892/892666.png" alt=""> <%= t.content %></div>
               </div>
-              </td>
+              <div id="important-label">MARK AS DONE:  <input type="checkbox"></div>
+            <div id="important-label"><small id="important-label">IMPORTANT:</small> <%= t.important ? 'YES' : 'NO' %></div>
+            <div class="details-delete">
+            <div><a class="details" href="/tasklists/<%= tasklist._id %>/<%= t._id %>/notes/new">NOTES:</a></div>
+              <div class="delete-container">
+                <form action="/tasklists/<%= t._id %>?_method=DELETE" id="delete-button" method="POST">
+                <button class="delete-button" type="submit">X</button>
+                </form>
+              </div>
+              </div>
+              </div>
           </div>
         <% }); %>
   <% } else { %>
