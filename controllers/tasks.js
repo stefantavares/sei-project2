@@ -2,7 +2,8 @@ const TaskList = require('../models/tasklist');
 
 module.exports = {
     create,
-    delete: deleteTask
+    delete: deleteTask,
+    edit: editTask
 };
 
 function create(req, res) {
@@ -27,4 +28,8 @@ function deleteTask(req, res) {
         console.log(task);
 
     })
+}
+
+function editTask(req, res) {
+
 }
