@@ -14,7 +14,11 @@ router.post('/', taskListsCtrl.create);
 // GET "/:id" - Show Route
 router.get('/:id', taskListsCtrl.show);
 
+// DELETE "/:id" - Delete Route
 router.delete('/:id', taskListsCtrl.delete);
+
+// GET "/:id/edit" - Edit Route
+router.get('/:id/edit', taskListsCtrl.edit);
 
 
 

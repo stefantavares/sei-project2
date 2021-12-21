@@ -1,42 +1,42 @@
 <%- include('../partials/header') %>
 
-<h1><img class="list-icon1" src="https://cdn-icons-png.flaticon.com/128/776/776864.png" alt=""> <%= tasklist.title %></h1>
-  <h3><%= tasklist.listDate %></h3>
+<h1><i class="far fa-list-alt"></i> <%= tasklist.title %></h1>
+  <h3><%= new Date(tasklist.listDate).toLocaleDateString() %></h3>
 
-<div id="add-task-container">
+<div class="add-task-container">
 <form action="/tasklists/<%= tasklist._id %>/tasks" method="POST">
   <div id="add-task-section">
     <label id="add-task-label" for="">ADD A TASK:</label>
     <textarea id="add-task-content" name="content" rows="2" cols="30" placeholder="Add task here..."></textarea>
   </div>
   <div id="important" class="align-right">
-    <label id="important-label" for="">IMPORTANT?:</label>
-    <input id="important-checkbox" type="checkbox" name="important">
+    <!-- <label id="important-label" for="">IMPORTANT?:</label>
+    <input id="important-checkbox" type="checkbox" name="important"> -->
   </div>
     <div class="align-right">
     <input id="add-task-btn" class="submit-button" type="submit" value="ADD TASK">
   </div>
   </form>
 </div>
-  <br>
-    <div>TASKS: </div>
+    <h1>TASKS</h1>
   
   <% if (tasklist.tasks.length) { %>
         <% tasklist.tasks.forEach(function(t) { %>
             <div id="one-list-container">
               <div class="title-container">
-                <div class="list-title"><img class="list-icon1" src="https://cdn-icons-png.flaticon.com/128/892/892666.png" alt=""> <%= t.content %></div>
+                <div class="list-title"><i class="fal fa-arrow-right"></i> <%= t.content %></div>
               </div>
-              <div id="important-label">MARK AS DONE:  <input type="checkbox"></div>
-            <div id="important-label"><small id="important-label">IMPORTANT:</small> <%= t.important ? 'YES' : 'NO' %></div>
+            <!-- <div id="important-label"><small id="important-label">IMPORTANT: </small> <%= t.important ? 'YES' : 'NO' %></div> -->
             <div class="details-delete">
-            <div><a class="details" href="/tasklists/<%= tasklist._id %>/<%= t._id %>/notes/new">NOTES:</a></div>
-              <div class="delete-container">
-                <form action="/tasklists/<%= t._id %>/tasks?_method=DELETE" id="delete-button" method="POST">
-                <button class="delete-button" type="submit">X</button>
+              <div class="details-container">
+                <div class="space-between"><a class="details" href="/tasklists/<%= t._id %>/">NOTES</a></div>
+                <div class="space-between"><a class="details" href="/tasks/<%= t._id%>/edit">EDIT</a></div>
+                <!-- <div class="space-between" id="important-label"><input type="checkbox"></div> -->
+                <form class="space-between" action="/tasklists/<%= t._id %>/tasks?_method=DELETE" id="delete-button" method="POST">
+                <button class="delete-button" type="submit">DELETE</button>
                 </form>
               </div>
-              </div>
+            </div>
               </div>
           </div>
         <% }); %>

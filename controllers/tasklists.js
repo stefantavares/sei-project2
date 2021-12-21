@@ -5,7 +5,8 @@ module.exports = {
     new: newTaskList,
     create,
     show,
-    delete: deleteTaskList
+    delete: deleteTaskList,
+    edit
 };
 
 function index(req, res) {
@@ -40,24 +41,9 @@ function deleteTaskList(req, res) {
     });
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function show(req, res) {
-//     TaskList.findById(req.params.id, function (err, tasklist) {
-//         Note.find({ tasklist: tasklist._id }, function (err, notes) {
-//             console.log('Here are the ', notes);
-//             res.render('tasklists/show', { tasklist, notes });
-//         })
-//     });
-// };
+function edit(req, res) {
+    console.log('RIGHT ROUTE')
+    TaskList.find(function (err, tasklists) {
+        res.render(`tasklists/${tasklists._id}/edit`, { tasklists });
+    });
+}

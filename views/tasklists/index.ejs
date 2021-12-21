@@ -1,27 +1,28 @@
 <%- include('../partials/header') %>
+
 <h1>MY TASK LISTS</h1>
-        <div>
+<div class="center">
+  <a class="nav-icon" href="/tasklists/new"><i class="far fa-list-alt"></i></a>
+  <div class="nav-label">ADD NEW LIST</div>
+</div>
         <% tasklists.forEach(function(t) { %>
-          <div id="div">
           <div id="one-list-container">
             <div class="title-container">
-              <div class="list-title"><img class="list-icon1" src="https://cdn-icons-png.flaticon.com/128/776/776864.png" alt=""> <%= t.title %></div>
+              <div class="list-title"><i class="fal fa-list-alt"></i> <%= t.title %></div>
             </div>
             <div class="date-container">
-              <div class="list-date"><%= t.listDate %></div>
+              <div class="list-date"><i class="fal fa-calendar"></i> <%= new Date(t.listDate).toLocaleDateString() %></div>
             </div>
             <div class="details-delete">
             <div class="details-container">
-              <div><a class="details" href="/tasklists/<%= t._id %>/">VIEW TASKS</a></div>
-            </div>
-            <div class="delete-container">
-              <form action="/tasklists/<%= t._id %>?_method=DELETE" id="delete-button" method="POST">
-              <button class="delete-button" type="submit">X</button>
+              <div class="space-between"><a class="details" href="/tasklists/<%= t._id %>/">VIEW TASKS</a></div>
+              <div class="space-between"><a class="details" href="/tasklists/<%= t._id %>/edit">EDIT</a></div>
+              <form class="space-between" action="/tasklists/<%= t._id %>?_method=DELETE" id="delete-button" method="POST">
+              <button class="delete-button" type="submit">DELETE</button>
               </form>
             </div>
           </div>
           </div>
-        </div>
         </div>
           <% }); %>
           <br>

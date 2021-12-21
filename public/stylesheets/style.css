@@ -9,12 +9,17 @@
 body {
   margin: 0;
   height: 100vh;
-  background-color: rgb(51, 51, 51);
+  background-color: black;
 }
+
+/* Nav Bar Styling */
 
 nav {
   border-bottom: 3px solid rgb(209, 211, 105);
   margin-bottom: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 body>nav {
@@ -37,22 +42,33 @@ nav>a {
   margin: 10px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 6px;
+  font-size: 8px;
   padding: 5px;
-  border: 1px solid white;
-  border-radius: 5px;
   color: white;
 }
 
-nav>a:hover:not(.active) {
+
+nav>a:hover {
   color: black;
   border-color: black;
   background-color: rgb(209, 211, 105);
 }
 
-nav>a.active {
+.nav-icon:hover {
+  color: rgb(209, 211, 105);
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.nav-label {
   color: white;
-  cursor: default;
+  font-size: 8px;
 }
 
 .login {
@@ -66,10 +82,8 @@ nav>a.active {
   height: 16px;
 }
 
-/* Icons */
-.list-icon1 {
-  height: 12px;
-}
+/* End Nav Bar Styling */
+
 
 main {
   display: flex;
@@ -77,6 +91,7 @@ main {
   align-items: center;
   flex-direction: column;
   color: white;
+  margin-top: 80px;
 }
 
 h1 {
@@ -87,6 +102,13 @@ h1 {
 h3 {
   font-size: 10px;
 }
+
+/* Table Styling */
+
+
+
+/* End Table Styling */
+
 
 #all-list-container {
   display: flex;
@@ -107,26 +129,40 @@ h3 {
 }
 
 .details-container {
-  margin-right: 20px;
+  display: flex;
+  flex-direction: row;
 }
 
 .delete-container {
+  display: flex;
+  flex-direction: row;
   margin-left: 20px;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.space-between {
+  margin: 0px 10px 0px 10px;
 }
 
 .list-title {
   font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 3px;
-  margin-bottom: 4px;
+  font-weight: 530;
+  letter-spacing: 1px;
+  margin-bottom: 7px;
+  width: 270px;
+  word-wrap: break-word;
 }
 
 .list-date {
-  font-size: 8px;
+  font-size: 10px;
 }
 
 #one-list-container {
-  background-color: rgb(51, 51, 51);
+  background-color: black;
   border: 1px solid rgb(197, 199, 103);
   border-radius: 5px;
   padding: 10px;
@@ -135,7 +171,7 @@ h3 {
 }
 
 #one-list-container:hover {
-  background-color: rgb(65, 65, 65);
+  background-color: rgb(24, 23, 23);
   border: 1px solid rgb(230, 231, 125);
   border-radius: 5px;
   padding: 10px;
@@ -173,7 +209,6 @@ h3 {
   justify-content: flex-start;
 }
 
-
 input[type=text] {
   width: 200px;
   height: 30px;
@@ -203,12 +238,12 @@ textarea {
   padding-left: 5px;
 }
 
-#add-task-container {
+.add-task-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 20px;
-  background-color: rgb(51, 51, 51);
+  background-color: black;
 }
 
 #add-task-label {
@@ -221,7 +256,7 @@ textarea {
 #important-label {
   font-size: 10px;
   font-weight: 800;
-  margin: 3px, 0px, 3px, 0px;
+  margin: 3px, 8px, 3px, 0px;
 }
 
 #important {
@@ -249,7 +284,7 @@ textarea {
 /* Details Button */
 a.details {
   font-size: 8px;
-  font-weight: 800;
+  font-weight: 400;
   color: white;
   border: 1px solid rgb(209, 211, 105);
   border-radius: 4px;
@@ -275,7 +310,7 @@ a.details:hover {
   border: 1px solid white;
   border-radius: 5px;
   color: white;
-  background-color: rgb(51, 51, 51);
+  background-color: black;
 }
 
 .submit-button:hover {
@@ -297,7 +332,7 @@ a {
   text-decoration: none;
   font-size: 10px;
   letter-spacing: 1px;
-  background-color: rgb(51, 51, 51);
+  background-color: black;
   border: 1px solid red;
   border-radius: 4px;
 }

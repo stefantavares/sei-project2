@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+
+<h1><i class="far fa-list-alt"></i> <%= tasklists.title %></h1>
+  <h3><%= new Date(tasklists.listDate).toLocaleDateString() %></h3>
+
+<div class="add-task-container">
+<form action="/tasklists/<%= tasklists._id %>?_method=PUT" method="POST">
+  <div id="add-task-section">
+    <label id="add-task-label" for="">EDIT TASK:</label>
+    <textarea id="add-task-content" name="content" rows="2" cols="30" placeholder="Add task here..."><%= tasklists.tasks.content %></textarea>
+  </div>
+  <div id="important" class="align-right">
+    <!-- <label id="important-label" for="">IMPORTANT?:</label>
+    <input id="important-checkbox" type="checkbox" name="important"> -->
+  </div>
+    <div class="align-right">
+    <input id="add-task-btn" class="submit-button" type="submit" value="ADD TASK">
+  </div>
+  </form>
+</div>
+
+<%- include('../partials/footer') %>
