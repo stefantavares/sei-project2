@@ -37,11 +37,11 @@ function editTask(req, res) {
 };
 
 function update(req, res) {
-    TaskList.findOne({ 'tasks._id': req.params.id }, function (err, tasklist) {
-        const task = tasklist.task.id(req.params.id);
+    TaskList.findOne({ 'tasks._id': req.params.id }, function (err, tasklists) {
+        const task = tasklists.tasks.id(req.params.id);
         task.content = req.body.content;
-        tasklist.save(function (err) {
-            res.redirect(`/tasklists/${tasklist._id}`);
+        tasklists.save(function (err) {
+            res.redirect(`/tasklists/${tasklists._id}`);
         })
     })
 }

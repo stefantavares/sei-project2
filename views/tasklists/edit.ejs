@@ -1,17 +1,17 @@
 <%- include('../partials/header') %>
 
 
-<h1>ADD A NEW TASK LIST</h1>
+<h1>EDIT TASK LIST</h1>
 <div id="add-task-container"></div>
-<form id="new-note-form" action="/tasklists" method="POST">
+<form id="new-note-form" action="/tasklists/<%= tasklists %>?_method=PUT" method="POST">
   <label id="add-task-label">TITLE:
-    <input type="text" name="title">
+    <input type="text" name="title" value="<%= tasklists.title %>">
   </label><br>
   <label id="add-task-label">DATE:
-    <input type="date" name="listDate">
+    <input type="date" name="listDate" value="<%= tasklists.listDate %>">
   </label><br><br>
   <div class="align-right">
-    <input class="submit-button" type="submit" value="ADD TASK LIST">
+    <input class="submit-button" type="submit" value="EDIT TASK LIST">
   </div>
 </form>
 </div>
@@ -19,4 +19,3 @@
 
 
 <%- include('../partials/footer') %>
-

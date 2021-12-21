@@ -20,6 +20,9 @@ router.delete('/:id', taskListsCtrl.delete);
 // GET "/:id/edit" - Edit Route
 router.get('/:id/edit', taskListsCtrl.edit);
 
+// PUT "/:id" - Update Route
+router.put('/:id', taskListsCtrl.update);
+
 
 
 

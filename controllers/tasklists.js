@@ -6,7 +6,8 @@ module.exports = {
     create,
     show,
     delete: deleteTaskList,
-    edit
+    edit,
+    update: updateTaskList
 };
 
 function index(req, res) {
@@ -42,8 +43,20 @@ function deleteTaskList(req, res) {
 }
 
 function edit(req, res) {
-    console.log('RIGHT ROUTE')
-    TaskList.find(function (err, tasklists) {
-        res.render(`tasklists/${tasklists._id}/edit`, { tasklists });
+    TaskList.findOne({ 'tasklists._id': req.params.id }).then(function (tasklists) {
+        tasklists.tasklistId = req.params.id
+        res.render(`tasklists/edit`, { tasklists });
     });
+}
+
+function updateTaskList(req, res) {
+    TaskList.findOne({ 'tasklists._id': req.params.id }, function (err, tasklists) {
+        const tasklist = req.params.id;
+        tasklist.title = req.body.title;
+        tasklist.listDate = req.body.listDate;
+        tasklists.save(function (err) {
+            res.redirect('/tasklists');
+        })
+    })
+
 }
