@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <h1><i class="far fa-list-alt"></i> <%= tasklists.title %></h1>
-  <h3><%= new Date(tasklists.listDate).toLocaleDateString() %></h3>
+  <h3><i class="fal fa-calendar"></i> <%= new Date(tasklists.listDate).toLocaleDateString() %></h3>
   <br>
   <a class="details" href="/tasklists/<%= tasklists._id %>"><i class="far fa-chevron-left"></i>
     BACK TO TASK LIST</a>

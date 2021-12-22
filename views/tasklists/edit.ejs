@@ -1,8 +1,11 @@
 <%- include('../partials/header') %>
 
 <h1><i class="far fa-list-alt"></i> <%= tasklists.title %></h1>
+<h3><i class="fal fa-calendar"></i> <%= new Date(tasklists.listDate).toLocaleDateString() %></h3>
 <br>
-
+<a class="details" href="/tasklists"><i class="far fa-chevron-left"></i>
+  BACK TO MY TASKLISTS</a>
+  <br>
 <div id="add-task-container"></div>
 <form id="new-note-form" action="/tasklists/<%= tasklists._id %>?_method=PUT" method="POST">
   <label id="add-task-label">TITLE:
