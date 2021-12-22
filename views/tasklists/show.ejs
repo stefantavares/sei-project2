@@ -17,7 +17,7 @@ BACK TO ALL TASKLISTS</a>
       </div>
    </form>
 </div>
-<h1>TASKS</h1>
+<!-- <h1>TASKS</h1> -->
 <% if (tasklist.tasks.length) { %>
 <% tasklist.tasks.forEach(function(t) { %>
 <div id="one-list-container">
@@ -38,6 +38,7 @@ BACK TO ALL TASKLISTS</a>
 </div>
 <% }); %>
 <% } else { %>
-<h6>No Tasks Yet</h6>
+<br><br>
+<h6>NO TASKS YET</h6>
 <% } %>
 <%- include('../partials/footer') %>

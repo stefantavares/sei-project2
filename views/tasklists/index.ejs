@@ -4,6 +4,7 @@
    <a class="nav-icon" href="/tasklists/new"><i class="far fa-list-alt"></i></a>
    <div class="nav-label">ADD NEW LIST</div>
 </div>
+<% if (tasklists.length) { %>
 <% tasklists.forEach(function(t) { %>
 <div id="one-list-container">
    <div class="title-container">
@@ -27,5 +28,9 @@
 </div>
 </div>
 <% }); %>
-<br>
+<% } else { %>
+  <br>
+  <br>
+  <h6>NO TASK LISTS YET</h6>
+  <% } %>
 <%- include('../partials/footer') %>
