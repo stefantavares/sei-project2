@@ -11,7 +11,7 @@ module.exports = {
 };
 
 function index(req, res) {
-    TaskList.find({}, function (err, tasklists) {
+    TaskList.find({ user: req.user }, function (err, tasklists) {
         console.log(tasklists);
         res.render('tasklists/index', { tasklists });
     });
@@ -22,7 +22,7 @@ function newTaskList(rew, res) {
 }
 
 function create(req, res) {
-    req.body.important = !!req.body.important;
+    req.body.user = req.user._id;
     const tasklist = new TaskList(req.body);
     tasklist.save(function (err) {
         if (err) return res.render('tasklists/new');

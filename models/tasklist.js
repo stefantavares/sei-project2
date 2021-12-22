@@ -16,6 +16,7 @@ const taskSchema = new Schema({
 });
 
 const taskListSchema = new Schema({
+    user: { type: Schema.Types.ObjectId, ref: 'User' },
     title: {
         type: String,
     },

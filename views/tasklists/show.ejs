@@ -2,7 +2,9 @@
 
 <h1><i class="far fa-list-alt"></i> <%= tasklist.title %></h1>
   <h3><%= new Date(tasklist.listDate).toLocaleDateString() %></h3>
-
+  <br>
+<a class="details" href="/tasklists"><i class="far fa-chevron-left"></i>
+  BACK TO MY TASKLISTS</a>
 <div class="add-task-container">
 <form action="/tasklists/<%= tasklist._id %>/tasks" method="POST">
   <div id="add-task-section">
@@ -31,7 +33,6 @@
               <div class="details-container">
                 <div class="space-between"><a class="details" href="/tasklists/<%= t._id %>/">NOTES</a></div>
                 <div class="space-between"><a class="details" href="/tasks/<%= t._id%>/edit">EDIT</a></div>
-                <!-- <div class="space-between" id="important-label"><input type="checkbox"></div> -->
                 <form class="space-between" action="/tasklists/<%= t._id %>/tasks?_method=DELETE" id="delete-button" method="POST">
                 <button class="delete-button" type="submit">DELETE</button>
                 </form>
@@ -41,7 +42,7 @@
           </div>
         <% }); %>
   <% } else { %>
-    <h5>No Tasks Yet</h5>
+    <h6>No Tasks Yet</h6>
   <% } %>
 
 

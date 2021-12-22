@@ -1,18 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const taskListsCtrl = require('../controllers/tasklists');
+const isLoggedIn = require('../config/auth');
+
 
 // GET "/tasklists" - Index Route
-router.get('/', taskListsCtrl.index);
+router.get('/', isLoggedIn, taskListsCtrl.index);
 
 // GET "/new" - New Route
-router.get('/new', taskListsCtrl.new);
+router.get('/new', isLoggedIn, taskListsCtrl.new);
 
 // POST "/" - Create Route
-router.post('/', taskListsCtrl.create);
+router.post('/', isLoggedIn, taskListsCtrl.create);
 
 // GET "/:id" - Show Route
-router.get('/:id', taskListsCtrl.show);
+router.get('/:id', isLoggedIn, taskListsCtrl.show);
 
 // DELETE "/:id" - Delete Route
 router.delete('/:id', taskListsCtrl.delete);
