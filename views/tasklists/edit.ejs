@@ -3,12 +3,12 @@
 
 <h1>EDIT TASK LIST</h1>
 <div id="add-task-container"></div>
-<form id="new-note-form" action="/tasklists/<%= tasklists %>?_method=PUT" method="POST">
+<form id="new-note-form" action="/tasklists/<%= tasklists._id %>?_method=PUT" method="POST">
   <label id="add-task-label">TITLE:
-    <input type="text" name="title" value="<%= tasklists.title %>">
+    <input type="text" name="title" value="<%= %>">
   </label><br>
   <label id="add-task-label">DATE:
-    <input type="date" name="listDate" value="<%= tasklists.listDate %>">
+    <input type="date" name="listDate" value="<%=  %>">
   </label><br><br>
   <div class="align-right">
     <input class="submit-button" type="submit" value="EDIT TASK LIST">

@@ -5,7 +5,7 @@ module.exports = {
     delete: deleteTask,
     edit: editTask,
     update
-};
+}
 
 function create(req, res) {
     TaskList.findById(req.params.id, function (err, tasklist) {
@@ -15,7 +15,7 @@ function create(req, res) {
             res.redirect(`/tasklists/${tasklist._id}`);
         });
     });
-};
+}
 
 function deleteTask(req, res) {
     TaskList.findOne({ 'tasks._id': req.params.id }, function (err, tasklist) {
@@ -26,15 +26,14 @@ function deleteTask(req, res) {
             res.redirect(`/tasklists/${tasklist._id}`)
         });
     });
-};
+}
 
 function editTask(req, res) {
-    console.log('RIGHT ROUTE');
     TaskList.findOne({ 'tasks._id': req.params.id }).then(function (tasklists) {
         tasklists.taskId = req.params.id
         res.render('tasks/edit', { tasklists });
     });
-};
+}
 
 function update(req, res) {
     TaskList.findOne({ 'tasks._id': req.params.id }, function (err, tasklists) {
@@ -42,6 +41,6 @@ function update(req, res) {
         task.content = req.body.content;
         tasklists.save(function (err) {
             res.redirect(`/tasklists/${tasklists._id}`);
-        })
-    })
+        });
+    });
 }

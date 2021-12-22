@@ -12,13 +12,14 @@ module.exports = {
 
 function index(req, res) {
     TaskList.find({}, function (err, tasklists) {
+        console.log(tasklists);
         res.render('tasklists/index', { tasklists });
     });
-};
+}
 
 function newTaskList(rew, res) {
     res.render('tasklists/new');
-};
+}
 
 function create(req, res) {
     req.body.important = !!req.body.important;
@@ -28,13 +29,13 @@ function create(req, res) {
         console.log(tasklist);
         res.redirect(`/tasklists`);
     });
-};
+}
 
 function show(req, res) {
     TaskList.findById(req.params.id, function (err, tasklist) {
         res.render('tasklists/show', { tasklist });
     });
-};
+}
 
 function deleteTaskList(req, res) {
     TaskList.findOneAndDelete({ _id: req.params.id }, function (err) {
@@ -43,20 +44,19 @@ function deleteTaskList(req, res) {
 }
 
 function edit(req, res) {
-    TaskList.findOne({ 'tasklists._id': req.params.id }).then(function (tasklists) {
-        tasklists.tasklistId = req.params.id
+    TaskList.findOne({ _id: req.params.id }).then(function (tasklists) {
+        console.log('hiii: ', tasklists)
         res.render(`tasklists/edit`, { tasklists });
     });
 }
 
 function updateTaskList(req, res) {
-    TaskList.findOne({ 'tasklists._id': req.params.id }, function (err, tasklists) {
-        const tasklist = req.params.id;
-        tasklist.title = req.body.title;
-        tasklist.listDate = req.body.listDate;
+    console.log("RIGHT ROUTE")
+    TaskList.findById(req.params.id, function (err, tasklists) {
+        tasklists.title = req.body.title;
+        tasklists.listDate = req.body.listDate;
         tasklists.save(function (err) {
             res.redirect('/tasklists');
-        })
-    })
-
+        });
+    });
 }
