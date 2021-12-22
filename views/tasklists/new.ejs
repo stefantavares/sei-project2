@@ -1,21 +1,19 @@
 <%- include('../partials/header') %>
-
 <h1>ADD A NEW TASK LIST</h1>
 <br>
 <a class="details" href="/tasklists"><i class="far fa-chevron-left"></i>
-  BACK TO MY TASKLISTS</a>
+BACK TO MY TASKLISTS</a>
 <div class="add-task-container"></div>
 <form id="new-note-form" action="/tasklists" method="POST">
-  <label id="add-task-label">TITLE:
-    <input type="text" name="title">
-  </label><br>
-  <label id="add-task-label">DATE:
-    <input type="date" name="listDate">
-  </label><br><br>
-  <div class="align-right">
-    <input class="submit-button" type="submit" value="ADD TASK LIST">
-  </div>
+   <label id="add-task-label">TITLE:
+   <input type="text" name="title">
+   </label><br>
+   <label id="add-task-label">DATE:
+   <input type="date" name="listDate">
+   </label><br><br>
+   <div class="align-right">
+      <input class="submit-button" type="submit" value="ADD TASK LIST">
+   </div>
 </form>
 </div>
-
 <%- include('../partials/footer') %>

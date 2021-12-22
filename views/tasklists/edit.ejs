@@ -1,25 +1,21 @@
 <%- include('../partials/header') %>
-
 <h1><i class="far fa-list-alt"></i> <%= tasklists.title %></h1>
 <h3><i class="fal fa-calendar"></i> <%= new Date(tasklists.listDate).toLocaleDateString() %></h3>
 <br>
 <a class="details" href="/tasklists"><i class="far fa-chevron-left"></i>
-  BACK TO MY TASKLISTS</a>
-  <br>
+BACK TO ALL TASKLISTS</a>
+<br>
 <div id="add-task-container"></div>
 <form id="new-note-form" action="/tasklists/<%= tasklists._id %>?_method=PUT" method="POST">
-  <label id="add-task-label">TITLE:
-    <input type="text" name="title" value="<%= tasklists.title %>">
-  </label><br>
-  <label id="add-task-label">DATE:
-    <input type="date" name="listDate" value="<%= new Date(tasklists.listDate).toLocaleDateString() %>">
-  </label><br><br>
-  <div class="align-right">
-    <input class="submit-button" type="submit" value="EDIT TASK LIST">
-  </div>
+   <label id="add-task-label">TITLE:
+   <input type="text" name="title" value="<%= tasklists.title %>">
+   </label><br>
+   <label id="add-task-label">DATE:
+   <input type="date" name="listDate" value="<%= new Date(tasklists.listDate).toLocaleDateString() %>">
+   </label><br><br>
+   <div class="align-right">
+      <input class="submit-button" type="submit" value="EDIT TASK LIST">
+   </div>
 </form>
 </div>
-
-
-
 <%- include('../partials/footer') %>

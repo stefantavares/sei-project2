@@ -22,6 +22,7 @@ function newTaskList(rew, res) {
 
 function create(req, res) {
     req.body.user = req.user._id;
+    req.body.userName = req.user.name;
     const tasklist = new TaskList(req.body);
     tasklist.save(function (err) {
         if (err) return res.render('tasklists/new');

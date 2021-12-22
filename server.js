@@ -7,7 +7,6 @@ var session = require('express-session');
 var passport = require('passport');
 var methodOverride = require('method-override');
 
-const isLoggedIn = require("./config/auth");
 
 
 var indexRouter = require('./routes/index');
@@ -24,6 +23,8 @@ require('./config/database');
 
 // require the passport module
 require('./config/passport');
+
+const isLoggedIn = require("./config/auth");
 
 var app = express();
 

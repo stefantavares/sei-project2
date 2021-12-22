@@ -13,7 +13,6 @@ body {
 }
 
 /* Nav Bar Styling */
-
 nav {
   border-bottom: 3px solid rgb(209, 211, 105);
   margin-bottom: 20px;
@@ -46,7 +45,6 @@ nav>a {
   padding: 5px;
   color: white;
 }
-
 
 nav>a:hover {
   color: black;
@@ -84,7 +82,6 @@ nav>a:hover {
 
 /* End Nav Bar Styling */
 
-
 main {
   display: flex;
   justify-content: center;
@@ -102,13 +99,6 @@ h1 {
 h3 {
   font-size: 10px;
 }
-
-/* Table Styling */
-
-
-
-/* End Table Styling */
-
 
 #all-list-container {
   display: flex;
@@ -296,9 +286,6 @@ a.details:hover {
   padding: 8px 11px 7px 11px;
 }
 
-/* Check box */
-
-
 /* Submit Buttons */
 .submit-button {
   margin: 10px, 0px, 0px, 10px;
@@ -319,13 +306,13 @@ a.details:hover {
   background-color: rgb(209, 211, 105);
 }
 
-
 a {
   color: white;
   text-decoration: none;
   letter-spacing: 1px;
 }
 
+/* Delete Buttons */
 .delete-button {
   padding: 2px 6px 2px 6px;
   color: red;

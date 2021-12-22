@@ -1,30 +1,31 @@
 <%- include('../partials/header') %>
-
 <h1>ALL TASK LISTS</h1>
 <div class="center">
-  <a class="nav-icon" href="/tasklists/new"><i class="far fa-list-alt"></i></a>
-  <div class="nav-label">ADD NEW LIST</div>
+   <a class="nav-icon" href="/tasklists/new"><i class="far fa-list-alt"></i></a>
+   <div class="nav-label">ADD NEW LIST</div>
 </div>
-        <% tasklists.forEach(function(t) { %>
-          <div id="one-list-container">
-            <div class="title-container">
-              <div class="list-title"><i class="fal fa-list-alt"></i> <%= t.title %></div>
-            </div>
-            <div class="date-container">
-              <div class="list-date"><i class="fal fa-calendar"></i> <%= new Date(t.listDate).toLocaleDateString() %></div>
-            </div>
-            <div class="details-delete">
-            <div class="details-container">
-              <div class="space-between"><a class="details" href="/tasklists/<%= t._id %>/">VIEW TASKS</a></div>
-              <div class="space-between"><a class="details" href="/tasklists/<%= t._id %>/edit">EDIT</a></div>
-              <form class="space-between" action="/tasklists/<%= t._id %>?_method=DELETE" id="delete-button" method="POST">
-              <button class="delete-button" type="submit">DELETE</button>
-              </form>
-            </div>
-          </div>
-          </div>
-        </div>
-          <% }); %>
-          <br>
-
+<% tasklists.forEach(function(t) { %>
+<div id="one-list-container">
+   <div class="title-container">
+      <div class="list-title"><i class="fal fa-list-alt"></i> <%= t.title %></div>
+   </div>
+   <div class="date-container">
+      <div class="list-date"><i class="fal fa-calendar"></i> &nbsp;<%= new Date(t.listDate).toLocaleDateString() %></div>
+   </div>
+   <div class="date-container">
+    <div class="list-date"><i class="fal fa-user"></i></i> &nbsp;<%= t.userName %></div>
+ </div>
+   <div class="details-delete">
+      <div class="details-container">
+         <div class="space-between"><a class="details" href="/tasklists/<%= t._id %>/">VIEW TASKS</a></div>
+         <div class="space-between"><a class="details" href="/tasklists/<%= t._id %>/edit">EDIT</a></div>
+         <form class="space-between" action="/tasklists/<%= t._id %>?_method=DELETE" id="delete-button" method="POST">
+            <button class="delete-button" type="submit">DELETE</button>
+         </form>
+      </div>
+   </div>
+</div>
+</div>
+<% }); %>
+<br>
 <%- include('../partials/footer') %>

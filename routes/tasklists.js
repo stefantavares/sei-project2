@@ -5,16 +5,16 @@ const isLoggedIn = require('../config/auth');
 
 
 // GET "/tasklists" - Index Route
-router.get('/', isLoggedIn, taskListsCtrl.index);
+router.get('/', taskListsCtrl.index);
 
 // GET "/new" - New Route
-router.get('/new', isLoggedIn, taskListsCtrl.new);
+router.get('/new', taskListsCtrl.new);
 
 // POST "/" - Create Route
-router.post('/', isLoggedIn, taskListsCtrl.create);
+router.post('/', taskListsCtrl.create);
 
 // GET "/:id" - Show Route
-router.get('/:id', isLoggedIn, taskListsCtrl.show);
+router.get('/:id', taskListsCtrl.show);
 
 // DELETE "/:id" - Delete Route
 router.delete('/:id', taskListsCtrl.delete);
