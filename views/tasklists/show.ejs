@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <h1><i class="far fa-list-alt"></i> <%= tasklist.title %></h1>
-  <h3><%= new Date(tasklist.listDate).toLocaleDateString() %></h3>
+  <h3><i class="fal fa-calendar"></i> <%= new Date(tasklist.listDate).toLocaleDateString() %></h3>
   <br>
 <a class="details" href="/tasklists"><i class="far fa-chevron-left"></i>
   BACK TO MY TASKLISTS</a>
@@ -31,7 +31,7 @@
             <!-- <div id="important-label"><small id="important-label">IMPORTANT: </small> <%= t.important ? 'YES' : 'NO' %></div> -->
             <div class="details-delete">
               <div class="details-container">
-                <div class="space-between"><a class="details" href="/tasklists/<%= t._id %>/">NOTES</a></div>
+                <!-- <div class="space-between"><a class="details" href="">NOTES</a></div> -->
                 <div class="space-between"><a class="details" href="/tasks/<%= t._id%>/edit">EDIT</a></div>
                 <form class="space-between" action="/tasklists/<%= t._id %>/tasks?_method=DELETE" id="delete-button" method="POST">
                 <button class="delete-button" type="submit">DELETE</button>
