@@ -43,7 +43,7 @@ function editTask(req, res) {
                 content.push(t);
             };
         });
-        // Pass tasklists, content to the page
+        // Pass tasklists & content to the page
         res.render('tasks/edit', { tasklists, content });
     });
 }
