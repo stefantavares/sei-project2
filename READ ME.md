@@ -64,7 +64,7 @@
 
 ### **CLICK THE LINK TO USE THE APP!**
 
-- <a href="https://stefantavares.github.io/Connect-Four/" target="_blank" rel="noreferrer noopener" >TASK MANAGER</a>
+- <a href="https://task-manager-sei.herokuapp.com/" target="_blank" rel="noreferrer noopener" >TASK MANAGER</a>
 
 <br />
 <br />
