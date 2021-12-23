@@ -74,6 +74,8 @@
 > - MongoDB
 > - Express(.js)
 > - Node(.js)
+> - Html
+> - CSS
 
 <br />
 
