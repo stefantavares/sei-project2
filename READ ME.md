@@ -6,7 +6,7 @@
  - **Task Manager** is a simple app designed to allow users to create and keep lists of tasks in their daily life.
 
 <br />
-<br />
+
 
 ## **HOW TO USE:**
 
