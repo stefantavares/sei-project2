@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
-<h1><i class="far fa-list-alt"></i> <%= tasklists.title %></h1>
-<h3><i class="fal fa-calendar"></i> <%= new Date(tasklists.listDate).toLocaleDateString() %></h3>
+<h1><i class="fal fa-arrow-right"></i> <%= content[0].content %></h1>
+<br>
 <br>
 <a class="details" href="/tasklists/<%= tasklists._id %>"><i class="far fa-chevron-left"></i>
 BACK TO TASK LIST</a>
@@ -8,7 +8,7 @@ BACK TO TASK LIST</a>
    <form action="/tasks/<%= tasklists.taskId %>?_method=PUT" method="POST">
       <div id="add-task-section">
          <label id="add-task-label" for="">EDIT TASK:</label>
-         <textarea id="add-task-content" name="content" rows="2" cols="30" placeholder="Add task here..."><%=  %></textarea>
+         <textarea id="add-task-content" name="content" rows="2" cols="30" placeholder="Add task here..."><%= content[0].content %></textarea>
       </div>
       <div id="important" class="align-right">
       </div>

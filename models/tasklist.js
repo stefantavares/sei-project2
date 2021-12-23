@@ -1,18 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const noteSchema = new Schema({
-    content: String,
-});
-
 const taskSchema = new Schema({
     content: {
         type: String,
         required: true,
     },
-    complete: Boolean,
-    important: Boolean,
-    notes: [noteSchema]
 });
 
 const taskListSchema = new Schema({
@@ -30,6 +23,5 @@ const taskListSchema = new Schema({
     },
     tasks: [taskSchema]
 });
-
 
 module.exports = mongoose.model('TaskList', taskListSchema)

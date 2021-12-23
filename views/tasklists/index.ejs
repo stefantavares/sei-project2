@@ -1,9 +1,10 @@
 <%- include('../partials/header') %>
 <h1>ALL TASK LISTS</h1>
 <div class="center">
-   <a class="nav-icon" href="/tasklists/new"><i class="far fa-list-alt"></i></a>
-   <div class="nav-label">ADD NEW LIST</div>
+   <a class="nav-icon" id="add-new-list" href="/tasklists/new"><i class="far fa-list-alt"></i></a>
+   <div class="nav-label" id="add-new-label">ADD NEW LIST</div>
 </div>
+<br>
 <% if (tasklists.length) { %>
 <% tasklists.forEach(function(t) { %>
 <div id="one-list-container">

@@ -5,7 +5,7 @@ const isLoggedIn = require('../config/auth');
 
 
 // GET "/tasklists" - Index Route
-router.get('/', taskListsCtrl.index);
+router.get('/', isLoggedIn, taskListsCtrl.index);
 
 // GET "/new" - New Route
 router.get('/new', taskListsCtrl.new);

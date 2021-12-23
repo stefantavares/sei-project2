@@ -24,6 +24,7 @@ function create(req, res) {
     req.body.user = req.user._id;
     req.body.userName = req.user.name;
     const tasklist = new TaskList(req.body);
+    if (!tasklist.user.equals(req.user._id)) return res.redirect(`/tasklists`);
     tasklist.save(function (err) {
         if (err) return res.render('tasklists/new');
         res.redirect(`/tasklists`);
@@ -37,19 +38,22 @@ function show(req, res) {
 }
 
 function deleteTaskList(req, res) {
-    TaskList.findOneAndDelete({ _id: req.params.id }, function (err) {
+    TaskList.findOneAndDelete({ _id: req.params.id }, function (err, tasklist) {
+        if (!tasklist.user.equals(req.user._id)) return res.redirect(`/tasklists`);
         res.redirect('/tasklists');
     });
 }
 
 function edit(req, res) {
     TaskList.findOne({ _id: req.params.id }).then(function (tasklists) {
+        if (!tasklists.user.equals(req.user._id)) return res.redirect(`/tasklists`);
         res.render(`tasklists/edit`, { tasklists });
     });
 }
 
 function updateTaskList(req, res) {
     TaskList.findById(req.params.id, function (err, tasklists) {
+        if (!tasklists.user.equals(req.user._id)) return res.redirect(`/tasklists`);
         tasklists.title = req.body.title;
         tasklists.listDate = req.body.listDate;
         tasklists.save(function (err) {

@@ -17,17 +17,15 @@ BACK TO ALL TASKLISTS</a>
       </div>
    </form>
 </div>
-<!-- <h1>TASKS</h1> -->
+<br>
 <% if (tasklist.tasks.length) { %>
 <% tasklist.tasks.forEach(function(t) { %>
 <div id="one-list-container">
    <div class="title-container">
       <div class="list-title"><i class="fal fa-arrow-right"></i> <%= t.content %></div>
    </div>
-   <!-- <div id="important-label"><small id="important-label">IMPORTANT: </small> <%= t.important ? 'YES' : 'NO' %></div> -->
    <div class="details-delete">
       <div class="details-container">
-         <!-- <div class="space-between"><a class="details" href="">NOTES</a></div> -->
          <div class="space-between"><a class="details" href="/tasks/<%= t._id%>/edit">EDIT</a></div>
          <form class="space-between" action="/tasklists/<%= t._id %>/tasks?_method=DELETE" id="delete-button" method="POST">
             <button class="delete-button" type="submit">DELETE</button>
