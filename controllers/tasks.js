@@ -30,7 +30,7 @@ function deleteTask(req, res) {
 }
 
 function editTask(req, res) {
-    // Set content property to an empty array
+    // Set content to an empty array
     let content = [];
     // Find the id of the task
     TaskList.findOne({ 'tasks._id': req.params.id }).then(function (tasklists) {
@@ -43,6 +43,7 @@ function editTask(req, res) {
                 content.push(t);
             };
         });
+        // Pass tasklists, content to the page
         res.render('tasks/edit', { tasklists, content });
     });
 }
